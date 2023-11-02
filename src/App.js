@@ -12,31 +12,35 @@ import ContactameEN from "./components/contactameEN.jsx";
 import Nav from "./components/nav.jsx";
 import "./App.css";
 import { useSelector } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-
-  const language = useSelector(state => state.language);
+  const language = useSelector((state) => state.language);
 
   return (
-    <div className="App">
-      <Nav />
-      {language ? (
-        <>
-        <Head />
-        <Resumen />
-        <Proyectos />
-        <Estudios />
-        <Contactame />
-        </>
-      ) : (
-        <>
-        <HeadEN />
-        <ResumenEN />
-        <ProyectosEN />
-        <EstudiosEN />
-        <ContactameEN />
-        </>
-      )}
+    <div className="bg-radial-light dark:bg-radial-dark min-h-screen max-h-auto">
+      <div className="App mx-48">
+        <Nav />
+        {language ? (
+          <>
+            <Head />
+            <ToastContainer position="top-right" autoClose={1500} />
+            <Resumen />
+            <Proyectos />
+            <Estudios />
+            <Contactame />
+          </>
+        ) : (
+          <>
+            <HeadEN />
+            <ResumenEN />
+            <ProyectosEN />
+            <EstudiosEN />
+            <ContactameEN />
+          </>
+        )}
+      </div>
     </div>
   );
 }
