@@ -14,6 +14,7 @@ module.exports = {
       fontSize: {
         parrafo: "1.2rem",
         subtitulo: "1.5rem",
+        semititulo: "2.2rem",
         titulo: "3rem",
       },
       backgroundImage: {

@@ -27,16 +27,17 @@ function App() {
             <Head />
             <ToastContainer position="top-right" autoClose={1500} />
             <Resumen />
-            <Proyectos />
             <Estudios />
+            <Proyectos />
             <Contactame />
           </>
         ) : (
           <>
             <HeadEN />
+            <ToastContainer position="top-right" autoClose={1500} />
             <ResumenEN />
-            <ProyectosEN />
             <EstudiosEN />
+            <ProyectosEN />
             <ContactameEN />
           </>
         )}

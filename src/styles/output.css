@@ -608,12 +608,28 @@ video {
   bottom: 0.375rem;
 }
 
+.bottom-4 {
+  bottom: 1rem;
+}
+
 .top-0 {
   top: 0px;
 }
 
 .top-0\.5 {
   top: 0.125rem;
+}
+
+.top-1 {
+  top: 0.25rem;
+}
+
+.top-1\.5 {
+  top: 0.375rem;
+}
+
+.top-2 {
+  top: 0.5rem;
 }
 
 .mx-48 {
@@ -628,6 +644,10 @@ video {
 
 .mr-10 {
   margin-right: 2.5rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
 }
 
 .mr-28 {
@@ -646,12 +666,24 @@ video {
   margin-right: 1.25rem;
 }
 
+.mr-6 {
+  margin-right: 1.5rem;
+}
+
+.mr-7 {
+  margin-right: 1.75rem;
+}
+
 .mr-8 {
   margin-right: 2rem;
 }
 
 .mt-10 {
   margin-top: 2.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .mt-3 {
@@ -672,6 +704,18 @@ video {
 
 .h-10 {
   height: 2.5rem;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
+.h-16 {
+  height: 4rem;
+}
+
+.h-24 {
+  height: 6rem;
 }
 
 .h-3 {
@@ -700,6 +744,22 @@ video {
 
 .w-12 {
   width: 3rem;
+}
+
+.w-14 {
+  width: 3.5rem;
+}
+
+.w-16 {
+  width: 4rem;
+}
+
+.w-24 {
+  width: 6rem;
+}
+
+.w-32 {
+  width: 8rem;
 }
 
 .w-48 {
@@ -813,19 +873,27 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.text-mainL {
+  --tw-text-opacity: 1;
+  color: rgb(0 79 58 / var(--tw-text-opacity));
+}
+
 .text-neutral-600 {
   --tw-text-opacity: 1;
   color: rgb(82 82 82 / var(--tw-text-opacity));
 }
 
-.text-violet-800 {
-  --tw-text-opacity: 1;
-  color: rgb(91 33 182 / var(--tw-text-opacity));
+.underline {
+  text-decoration-line: underline;
+}
+
+.underline-offset-2 {
+  text-underline-offset: 2px;
 }
 
 .shadow-light {
-  --tw-shadow: 5px 20px 100px 15px rgba(255, 255, 255, 0.3);
-  --tw-shadow-colored: 5px 20px 100px 15px var(--tw-shadow-color);
+  --tw-shadow: 20px 20px 100px 15px rgba(255, 255, 255, 0.3);
+  --tw-shadow-colored: 20px 20px 100px 15px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   --tw-shadow-color: black;
   --tw-shadow: var(--tw-shadow-colored);
@@ -1157,14 +1225,14 @@ video {
   color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
-:is(.dark .dark\:text-violet-500) {
+:is(.dark .dark\:text-mainD) {
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(94 195 191 / var(--tw-text-opacity));
 }
 
 :is(.dark .dark\:shadow-dark) {
-  --tw-shadow: 5px 20px 100px 5px rgba(0, 0, 0, 0.1);
-  --tw-shadow-colored: 5px 20px 100px 5px var(--tw-shadow-color);
+  --tw-shadow: 20px 20px 50px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 20px 20px 50px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   --tw-shadow-color: white;
   --tw-shadow: var(--tw-shadow-colored);
