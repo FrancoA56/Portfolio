@@ -18,8 +18,8 @@ module.exports = {
         titulo: "3rem",
       },
       backgroundImage: {
-        'radial-dark': 'radial-gradient(150rem circle at bottom, black, rgb(105, 105, 105))',
-        'radial-light': 'radial-gradient(40rem circle at bottom, white, rgb(105, 105, 105))',
+        'radial-dark': 'radial-gradient(circle at top left, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7))',
+        'radial-light': 'radial-gradient(circle at top left, rgba(0, 0, 0, 0.4), rgb(255, 255, 255))',
       },
       boxShadow: {
         'dark': '20px 20px 50px rgba(0, 0, 0, 0.1)',

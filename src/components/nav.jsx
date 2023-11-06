@@ -12,7 +12,7 @@ function Nav() {
   };
 
   return (
-    <div className="flex text-light text-parrafo dark:text-dark">
+    <div className="flex text-light text-parrafo dark:text-dark pt-3 pl-3">
       <button onClick={cambiarIdioma} className="pointer mr-10">
         {language ? (<div>ES</div>) : (<div>EN</div>)}
       </button>

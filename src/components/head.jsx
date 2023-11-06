@@ -53,7 +53,7 @@ function Head() {
         </div>
       </div>
       <div>
-        <img src={foto} alt="Imagen Franco Adamoli" className="w-48 rounded shadow-light dark:shadow-dark"/>
+        <img src={foto} alt="Imagen Franco Adamoli" className="w-48 rounded-full shadow-dark shadow-mainL dark:shadow-mainD"/>
       </div>
     </div>
   );

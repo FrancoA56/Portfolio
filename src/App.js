@@ -19,7 +19,7 @@ function App() {
   const language = useSelector((state) => state.language);
 
   return (
-    <div className="bg-radial-light dark:bg-radial-dark min-h-screen max-h-auto">
+    <div className="bg-radial-light dark:bg-radial-dark h-auto from-45%">
       <div className="App mx-48">
         <Nav />
         {language ? (
