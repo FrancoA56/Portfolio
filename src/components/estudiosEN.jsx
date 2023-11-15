@@ -14,7 +14,7 @@ function EstudiosEN() {
   return (
     <div className="text-light text-semititulo dark:text-dark">
       Education
-      <div className="text-light text-parrafo dark:text-dark mt-4 mb-8">
+      <div className="text-light text-parrafo dark:text-dark mt-4 mb-4">
         Full Stack Web Developer with a strong background obtained at{" "}
         <a
           href="https://www.soyhenry.com/"
@@ -27,6 +27,16 @@ function EstudiosEN() {
         , where I completed approximately 800 hours of theoretical and practical
         training, working on three projects, two individual and one group
         project, thus acquiring a solid knowledge in the following technologies.
+      </div>
+      <div className="mb-4 text-subtitulo">
+      <a
+          href="https://certificates.soyhenry.com/new-cert?id=a107f17276c7f05ef3353f0f2a253b0d79e74b1f156cf89b159deb88debeb9b0"
+          target="_blank"
+          rel="noreferrer"
+          className="text-mainL dark:text-mainD"
+        >
+          Certificate
+        </a>
       </div>
       <div className="flex justify-center">
         <img

@@ -14,7 +14,7 @@ function Estudios() {
   return (
     <div className="text-light text-semititulo dark:text-dark">
       Estudios
-      <div className="text-light text-parrafo dark:text-dark mt-4 mb-8">
+      <div className="text-light text-parrafo dark:text-dark mt-4 mb-4">
         Desarrollador Web Full Stack con una sólida formación obtenida en{" "}
         <a
           href="https://www.soyhenry.com/"
@@ -25,6 +25,16 @@ function Estudios() {
           SoyHenry
         </a>
         , donde cursé aproximadamente 800 horas de teoría y práctica, realizando tres proyectos, dos individuales y uno grupal, adquiriendo así un sólido conocimiento en las siguientes tecnologías.
+      </div>
+      <div className="mb-4 text-subtitulo">
+      <a
+          href="https://certificates.soyhenry.com/new-cert?id=a107f17276c7f05ef3353f0f2a253b0d79e74b1f156cf89b159deb88debeb9b0"
+          target="_blank"
+          rel="noreferrer"
+          className="text-mainL dark:text-mainD"
+        >
+          Certificado
+        </a>
       </div>
       <div className="flex justify-center">
         <img
