@@ -9,7 +9,7 @@ function Contactame() {
   return (
     <div className="mt-20 pb-20 grid grid-cols-2 text-light dark:text-dark">
       {language ? (
-        <div className="text-end pr-1 text-semititulo">!Contáctame!</div>
+        <div className="text-end pr-1 text-semititulo">¡Contáctame!</div>
       ) : (
         <div className="text-end pr-1 text-semititulo">Contact me!</div>
       )}
