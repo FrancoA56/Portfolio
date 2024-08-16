@@ -9,7 +9,10 @@ import redux from "../utils/image/redux.png";
 import sequalize from "../utils/image/sequalize.png";
 import sql from "../utils/image/sql.png";
 import git from "../utils/image/git.png";
+import wordpress from "../utils/image/wordpress.png";
+import wordpressB from "../utils/image/wordpressB.png";
 import { useSelector } from "react-redux";
+
 
 function Estudios() {
   const language = useSelector((state) => state.language);
@@ -76,6 +79,18 @@ function Estudios() {
           alt="git"
           title="Git"
           className="w-14 h-14 relative top-2 transform transition-transform hover:scale-125"
+        />
+        <img
+          src={wordpress}
+          alt="wordpress"
+          title="Wordpress"
+          className="w-14 h-14 relative ml-6 top-2 transform transition-transform hover:scale-125 dark:hidden"
+        />
+        <img
+          src={wordpressB}
+          alt="wordpress"
+          title="Wordpress"
+          className="w-14 h-14 relative ml-6 top-2 transform transition-transform hover:scale-125 hidden dark:inline"
         />
       </div>
       {language ? (
