@@ -55,7 +55,7 @@ function RickAndMorty() {
   };
 
   return (
-    <div className="text-light dark:text-dark border shadow-lg shadow-mainL dark:shadow-mainD border-mainL dark:border-mainD rounded mx-24 mt-12">
+    <div className="text-light dark:text-dark border shadow-lg shadow-mainL dark:shadow-mainD border-mainL dark:border-mainD rounded mx-24 mt-12 bg-lightimg dark:bg-darkimg">
       <div className="grid grid-cols-3 items-center">
         <div className="text-parrafo text-center flex-col items-center">
           <div className="grid grid-cols-2">
@@ -104,7 +104,7 @@ function RickAndMorty() {
           <div className="flex justify-center">
             <button
               onClick={openModal}
-              className="mt-4 p-2 bg-mainL dark:bg-mainD text-white rounded"
+              className="mt-4 p-2 bg-mainL dark:bg-mainD text-white rounded px-6 shadow-md shadow-light hover:bg-mainD dark:hover:bg-mainL hover:color-light transition ease-in-out"
             >
               {language ? "Ver más" : "See more"}
             </button>

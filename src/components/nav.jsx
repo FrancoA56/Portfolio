@@ -42,7 +42,7 @@ function Nav() {
   };
 
   return (
-    <div className="text-light absolute h-screen w-screen text-parrafo dark:text-dark bg-light dark:bg-dark bg-cover">
+    <div className="text-light absolute h-screen w-screen text-parrafo dark:text-dark bg-lightimg dark:bg-darkimg bg-cover">
       {/* Barra de navegación */}
       <div className="flex items-center justify-between p-3 relative z-10">
         <div className="flex items-center space-x-4">

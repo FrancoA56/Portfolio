@@ -16,10 +16,11 @@ module.exports = {
         subtitulo: "1.5rem",
         semititulo: "2.2rem",
         titulo: "3rem",
+        superTitulo: "4rem"
       },
       backgroundImage: {
-        'dark': "url('/src/utils/image/fondo-dark.jpg')",
-        'light': "url('/src/utils/image/fondo-light.jpg')",
+        'darkimg': "url('/src/utils/image/fondo-dark.jpg')",
+        'lightimg': "url('/src/utils/image/fondo-light.jpg')",
       },
       boxShadow: {
         'dark': '20px 20px 50px rgba(0, 0, 0, 0.1)',
