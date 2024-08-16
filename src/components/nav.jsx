@@ -8,6 +8,8 @@ import Estudios from "./estudios";
 import Proyectos from "./proyectos";
 import Contacto from "./contactame";
 import { translations } from "./translations";
+import fondoDark from "../utils/image/fondo-dark.jpg";
+import fondoLight from "../utils/image/fondo-light.jpg";
 
 function Nav() {
   const dispatch = useDispatch();
@@ -42,16 +44,16 @@ function Nav() {
   };
 
   return (
-    <div className="text-light bg-dark h-auto dark:bg-light text-parrafo dark:text-dark">
+    <div className="text-light absolute h-screen text-parrafo dark:text-dark bg-light dark:bg-dark bg-cover">
       {/* Barra de navegación */}
-      <div className="flex items-center justify-between p-3 relative z-10 bg-white dark:bg-gray-800">
+      <div className="flex items-center justify-between p-3 relative z-10">
         <div className="flex items-center space-x-4">
           <DarkMode />
           <button onClick={cambiarIdioma} className="pointer">
             {language ? <div>Español</div> : <div> English </div>}
           </button>
         </div>
-        <nav className="flex-grow flex justify-between space-x-4 mx-44">
+        <nav className="flex-grow flex justify-between space-x-4 mx-44 text-light dark:text-dark">
           {pages.map((page) => (
             <button
               key={page}
@@ -59,7 +61,7 @@ function Nav() {
               className={`${
                 currentPage === page
                   ? "text-mainL dark:text-mainD font-bold" // Color y estilo para la página activa
-                  : "text-white dark:text-dark "
+                  : "text-light dark:text-dark"
               }`}
             >
               {translations[language ? "es" : "en"][page.toLowerCase()]}
@@ -69,7 +71,9 @@ function Nav() {
       </div>
 
       {/* Contenedor de animaciones */}
-      <div className="relative w-full h-full">
+      <div
+        className="relative w-full h-full"
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={currentPage}

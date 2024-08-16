@@ -9,7 +9,7 @@ function Head() {
   const language = useSelector((state) => state.language);
 
   return (
-    <div className="flex flex-col items-center justify-center mx-44">
+    <div className="flex flex-col items-center justify-center my-16 mx-44">
       <div className="grid grid-cols-5 items-center justify-center">
         <div className="col-span-3 flex flex-col items-start justify-center">
           <div className="text-center text-light text-titulo dark:text-dark">
@@ -69,7 +69,7 @@ function Head() {
         </div>
       </div>
       {language ? (
-        <div className="text-light text-parrafo dark:text-dark text-center mb-2">
+        <div className="text-light text-parrafo dark:text-dark text-center mb-2 mx-4">
           En el último año, he ampliado mi experiencia al trabajar como
           programador web, especializándome en JavaScript y WordPress, lo que me
           ha permitido desarrollar habilidades robustas en el desarrollo web. Mi
@@ -81,7 +81,7 @@ function Head() {
           en las interacciones sociales.
         </div>
       ) : (
-        <div className="text-light text-parrafo dark:text-dark text-center mb-2">
+        <div className="text-light text-parrafo dark:text-dark text-center mb-2 mx-4">
           In the past year, I have expanded my experience by working as a web
           developer, specializing in JavaScript and WordPress, which has allowed
           me to develop robust skills in web development. My previous work
@@ -96,9 +96,6 @@ function Head() {
           world.
         </div>
       )}
-      
-
-      
     </div>
   );
 }

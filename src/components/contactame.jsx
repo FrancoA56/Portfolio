@@ -7,7 +7,7 @@ function Contactame() {
   const language = useSelector((state) => state.language);
 
   return (
-    <div className="mt-20 pb-20 grid grid-cols-2 text-light dark:text-dark">
+    <div className="my-16 mx-44 w-screen grid grid-cols-2 text-light justify-center items-center dark:text-dark">
       {language ? (
         <div className="text-end pr-1 text-semititulo">¡Contáctame!</div>
       ) : (
