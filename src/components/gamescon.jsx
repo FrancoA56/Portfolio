@@ -18,7 +18,7 @@ import register from "../utils/image/proyectos/proyecto GamesCon/register.jpg";
 import adminPanel from "../utils/image/proyectos/proyecto GamesCon/create1.jpg";
 import { useSelector } from "react-redux";
 
-const customStyles = {
+const getCustomStyles = (theme) => ({
   content: {
     top: "50%",
     left: "50%",
@@ -30,13 +30,22 @@ const customStyles = {
     maxWidth: "600px",
     padding: "20px",
     borderRadius: "8px",
+    background: theme === "dark" ? "#333" : "#fff",
+    color: theme === "dark" ? "#fff" : "#333",
+    border: theme === "dark" ? "1px solid #444" : "1px solid #ddd",
   },
-};
+  overlay: {
+    backgroundColor: theme === "dark" 
+      ? "rgba(0, 0, 0, 0.60)" 
+      : "rgba(255, 255, 255, 0.60)", // Fondo alrededor del modal
+  },
+});
 
 Modal.setAppElement("#root");
 
 function GamesCon() {
   const language = useSelector((state) => state.language);
+  const theme = useSelector((state) => state.theme);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
@@ -182,13 +191,13 @@ function GamesCon() {
                   />
                 </Slide>
               </Slider>
-              <div className="flex justify-center gap-3 mt-2">
-                <ButtonBack>
+              <div className="flex justify-center mx-auto items-center">
+                <ButtonBack className="">
                   <span className="material-symbols-outlined">
                     navigate_before
                   </span>
                 </ButtonBack>
-                <ButtonNext>
+                <ButtonNext className="">
                   <span className="material-symbols-outlined">
                     navigate_next
                   </span>
@@ -198,11 +207,10 @@ function GamesCon() {
           </CarouselProvider>
         </div>
       </div>
-
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={getCustomStyles(theme)}
         contentLabel="Descripción del proyecto"
       >
         <h2 className="text-center mb-4">
@@ -211,31 +219,28 @@ function GamesCon() {
         <div>
           {language ? (
             <div className="pr-10 pl-4 pb-10 pt-4">
-              Un E-commerce de videojuegos en el que los usuarios pueden
-              explorar diferentes juegos, agregarlos al carrito de compras y
-              proceder a realizar el pago. El sistema permite a los usuarios
-              registrarse, iniciar sesión y gestionar sus perfiles. Incluye una
-              vista de los detalles del juego, una sección para administrar el
-              carrito, y un panel de administración para los administradores del
-              sitio que facilita la gestión de productos, usuarios y pedidos.
+              Una plataforma de E-commerce dedicada a la venta de videojuegos, 
+              donde los usuarios pueden registrarse, iniciar sesión, y administrar su 
+              cuenta. Ofrece filtrado avanzado de juegos por género, precio y otros 
+              criterios, además de un carrito de compras integrado que permite 
+              revisar y completar la compra. El administrador tiene acceso a un 
+              panel de control para gestionar productos, pedidos, y usuarios, con 
+              funcionalidades para crear, editar y eliminar juegos, así como para 
+              revisar el historial de compras.
             </div>
           ) : (
             <div className="pr-10 pl-4 pb-10 pt-4">
-              A Single Page Application (SPA) that consumes data from an
-              external API and enables the visualization of general and detailed
-              information for over 500,000 video games. This app offers various
-              functionalities, including the ability to filter and sort video
-              games based on different variables such as genre, platforms, name,
-              and rating. Additionally, the application allows users to create
-              new video games through a controlled form and also provides user
-              registration and login functionalities for authenticated users.
+              An E-commerce platform dedicated to selling video games, where 
+              users can register, log in, and manage their accounts. It offers 
+              advanced filtering of games by genre, price, and other criteria, 
+              along with an integrated shopping cart that allows users to review 
+              and complete purchases. The admin has access to a control panel 
+              for managing products, orders, and users, with functionalities to 
+              create, edit, and delete games, as well as review the purchase history.
             </div>
           )}
         </div>
-        <button
-          onClick={closeModal}
-          className="mt-4 p-2 bg-mainL dark:bg-mainD text-white rounded"
-        >
+        <button onClick={closeModal} className="mt-4 p-2 bg-mainL dark:bg-mainD text-white rounded mx-auto block">
           {language ? "Cerrar" : "Close"}
         </button>
       </Modal>

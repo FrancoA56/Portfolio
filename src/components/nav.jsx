@@ -8,8 +8,6 @@ import Estudios from "./estudios";
 import Proyectos from "./proyectos";
 import Contacto from "./contactame";
 import { translations } from "./translations";
-import fondoDark from "../utils/image/fondo-dark.jpg";
-import fondoLight from "../utils/image/fondo-light.jpg";
 
 function Nav() {
   const dispatch = useDispatch();
@@ -44,7 +42,7 @@ function Nav() {
   };
 
   return (
-    <div className="text-light absolute h-screen text-parrafo dark:text-dark bg-light dark:bg-dark bg-cover">
+    <div className="text-light absolute h-screen w-screen text-parrafo dark:text-dark bg-light dark:bg-dark bg-cover">
       {/* Barra de navegación */}
       <div className="flex items-center justify-between p-3 relative z-10">
         <div className="flex items-center space-x-4">
@@ -60,7 +58,7 @@ function Nav() {
               onClick={() => handleClick(page)}
               className={`${
                 currentPage === page
-                  ? "text-mainL dark:text-mainD font-bold" // Color y estilo para la página activa
+                  ? "text-mainL dark:text-mainD font-bold"
                   : "text-light dark:text-dark"
               }`}
             >
@@ -83,7 +81,7 @@ function Nav() {
             exit="exit"
             variants={variants}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="top-0 left-0 w-full h-full "
+            className="top-0 left-0 w-full h-full"
           >
             {currentPage === "Inicio" && <Inicio />}
             {currentPage === "Estudios" && <Estudios />}

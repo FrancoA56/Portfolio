@@ -17,7 +17,8 @@ import CosAbout from "../utils/image/proyectos/cos/about.png";
 import CosSupply from "../utils/image/proyectos/cos/supply.png";
 import { useSelector } from "react-redux";
 
-const customStyles = {
+// Función para obtener los estilos personalizados del modal
+const getCustomStyles = (theme) => ({
   content: {
     top: "50%",
     left: "50%",
@@ -29,13 +30,20 @@ const customStyles = {
     maxWidth: "600px",
     padding: "20px",
     borderRadius: "8px",
+    background: theme === "dark" ? "#333" : "#fff",
+    color: theme === "dark" ? "#fff" : "#333",
+    border: theme === "dark" ? "1px solid #444" : "1px solid #ddd",
   },
-};
+  overlay: {
+    backgroundColor: theme === "dark" ? "rgba(0, 0, 0, 0.60)" : "rgba(255, 255, 255, 0.60)", // Fondo alrededor del modal
+  },
+});
 
 Modal.setAppElement("#root");
 
 function COS() {
   const language = useSelector((state) => state.language);
+  const theme = useSelector((state) => state.theme);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
@@ -57,7 +65,7 @@ function COS() {
             <div className="text-start pl-1">WordPress</div>
           </div>
           <div className="grid grid-cols-2">
-            <div className="text-end pr-1">{language ? "Tema" : "Theme"}:</div>
+            <div className="text-end pr-1">{language ? "Tema:" : "Theme:"}</div>
             <div className="text-start pl-1">Twenty Twenty-Two</div>
           </div>
           <div className="grid grid-cols-2">
@@ -159,39 +167,37 @@ function COS() {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={getCustomStyles(theme)}
         contentLabel="Descripción del proyecto"
       >
-        <h2 className="text-center mb-4">{language ? "Descripción del Proyecto" : "Proyect Description"}</h2>
+        <h2 className="text-center mb-4">
+          {language ? "Descripción del Proyecto" : "Project Description"}
+        </h2>
         <div>
           {language ? (
             <div className="pr-10 pl-4 pb-10 pt-4">
-              Un sitio web desarrollado en WordPress para COS Logistics, una
-              empresa de logística mundial. Este sitio está diseñado para
-              presentar de manera efectiva nuestros servicios y dar a conocer la
-              empresa a un público global. La web cuenta con secciones dedicadas
-              a la información detallada sobre nuestros servicios, así como un
-              formulario de contacto que permite a los usuarios enviar consultas
-              directamente por correo electrónico. La estructura y el diseño
-              están optimizados para brindar una experiencia de usuario fluida,
-              con un enfoque en la accesibilidad y la navegación intuitiva.
+              Un sitio web corporativo que presenta los servicios y la
+              información de la empresa COS Logistics, una compañía global de
+              logística. El sitio está diseñado para proporcionar una
+              experiencia de usuario fácil e intuitiva, con un enfoque en la
+              claridad y la accesibilidad. Los usuarios pueden contactar a la
+              empresa a través de formularios integrados y obtener información
+              detallada sobre los servicios ofrecidos.
             </div>
           ) : (
             <div className="pr-10 pl-4 pb-10 pt-4">
-              A website developed in WordPress for COS Logistics, a global
-              logistics company. This site is designed to effectively showcase
-              our services and introduce the company to a worldwide audience.
-              The website features dedicated sections providing detailed
-              information about our services, as well as a contact form that
-              allows users to send inquiries directly via email. The structure
-              and design are optimized to deliver a smooth user experience, with
-              a focus on accessibility and intuitive navigation.
+              A corporate website showcasing the services and information of COS
+              Logistics, a global logistics company. The site is designed to
+              provide a user-friendly and intuitive experience, with a focus on
+              clarity and accessibility. Users can contact the company through
+              integrated forms and obtain detailed information about the
+              services offered.
             </div>
           )}
         </div>
         <button
           onClick={closeModal}
-          className="mt-4 p-2 bg-mainL dark:bg-mainD text-white rounded"
+          className="mt-4 p-2 bg-mainL dark:bg-mainD text-white rounded mx-auto block"
         >
           {language ? "Cerrar" : "Close"}
         </button>

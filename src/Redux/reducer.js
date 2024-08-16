@@ -1,7 +1,8 @@
-import { LANGUAGE } from "./types";
+import { LANGUAGE, THEME } from "./types";
 
 const initialState = {
   language: true,
+  theme: "light"
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -11,6 +12,10 @@ const rootReducer = (state = initialState, { type, payload }) => {
         ...state,
         language: !state.language,
       };
+    case THEME:
+      return{...state,
+        theme: payload
+      }
 
     default:
       return { ...state };

@@ -23,7 +23,7 @@ import shop from "../utils/image/proyectos/proyecto CTT/shop.jpg";
 import team from "../utils/image/proyectos/proyecto CTT/team.jpg";
 import { useSelector } from "react-redux";
 
-const customStyles = {
+const getCustomStyles = (theme) => ({
   content: {
     top: "50%",
     left: "50%",
@@ -35,13 +35,21 @@ const customStyles = {
     maxWidth: "600px",
     padding: "20px",
     borderRadius: "8px",
+    background: theme === "dark" ? "#333" : "#fff",
+    color: theme === "dark" ? "#fff" : "#333",
+    border: theme === "dark" ? "1px solid #444" : "1px solid #ddd",
   },
-};
+  overlay: {
+    backgroundColor:
+      theme === "dark" ? "rgba(0, 0, 0, 0.60)" : "rgba(255, 255, 255, 0.60)",
+  },
+});
 
 Modal.setAppElement("#root");
 
 function CTT() {
   const language = useSelector((state) => state.language);
+  const theme = useSelector((state) => state.theme);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
@@ -99,7 +107,7 @@ function CTT() {
                 href="https://github.com/FrancoA56/FinalProjectClient"
                 target="_blank"
                 rel="noreferrer"
-                className="text-mainL dark:text-mainD "
+                className="text-mainL dark:text-mainD"
               >
                 {language ? "Cliente" : "Front"}
               </a>
@@ -147,89 +155,89 @@ function CTT() {
               </Slide>
               <Slide index={2}>
                 <img
-                  src={detail}
-                  alt="detailCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={3}>
-                <img
-                  src={preview}
-                  alt="previewCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={4}>
-                <img
-                  src={previewEdited}
-                  alt="previewEditedCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={5}>
-                <img
-                  src={cart}
-                  alt="cartCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={6}>
-                <img
-                  src={shop}
-                  alt="shopCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={7}>
-                <img
                   src={login}
                   alt="loginCTT"
                   className="transform transition-transform hover:scale-110"
                 />
               </Slide>
-              <Slide index={8}>
+              <Slide index={3}>
                 <img
                   src={register}
                   alt="registerCTT"
                   className="transform transition-transform hover:scale-110"
                 />
               </Slide>
-              <Slide index={9}>
+              <Slide index={4}>
                 <img
                   src={profile}
                   alt="profileCTT"
                   className="transform transition-transform hover:scale-110"
                 />
               </Slide>
-              <Slide index={10}>
+              <Slide index={5}>
+                <img
+                  src={shop}
+                  alt="shopCTT"
+                  className="transform transition-transform hover:scale-110"
+                />
+              </Slide>
+              <Slide index={6}>
+                <img
+                  src={cart}
+                  alt="cartCTT"
+                  className="transform transition-transform hover:scale-110"
+                />
+              </Slide>
+              <Slide index={7}>
+                <img
+                  src={detail}
+                  alt="detailCTT"
+                  className="transform transition-transform hover:scale-110"
+                />
+              </Slide>
+              <Slide index={8}>
                 <img
                   src={pay}
                   alt="payCTT"
                   className="transform transition-transform hover:scale-110"
                 />
               </Slide>
-              <Slide index={11}>
+              <Slide index={9}>
                 <img
-                  src={team}
-                  alt="teamCTT"
+                  src={preview}
+                  alt="previewCTT"
                   className="transform transition-transform hover:scale-110"
                 />
               </Slide>
-              <Slide index={12}>
+              <Slide index={10}>
+                <img
+                  src={previewEdited}
+                  alt="previewEditedCTT"
+                  className="transform transition-transform hover:scale-110"
+                />
+              </Slide>
+              <Slide index={11}>
                 <img
                   src={panelAdmin}
                   alt="panelAdminCTT"
                   className="transform transition-transform hover:scale-110"
                 />
               </Slide>
+              <Slide index={12}>
+                <img
+                  src={team}
+                  alt="teamCTT"
+                  className="transform transition-transform hover:scale-110"
+                />
+              </Slide>
             </Slider>
             <div className="flex justify-center mx-auto items-center">
-              <ButtonBack className="">
+              <ButtonBack>
                 <span className="material-symbols-outlined">
                   navigate_before
                 </span>
               </ButtonBack>
-              <ButtonNext className="">
+              <ButtonNext>
                 <span className="material-symbols-outlined">navigate_next</span>
               </ButtonNext>
             </div>
@@ -239,7 +247,7 @@ function CTT() {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={getCustomStyles(theme)}
         contentLabel="Descripción del proyecto"
       >
         <h2 className="text-center mb-4">

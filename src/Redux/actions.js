@@ -1,4 +1,4 @@
-import { LANGUAGE } from "./types";
+import { LANGUAGE, THEME } from "./types";
 import Swal from "sweetalert2";
 
 const showErrorAlert = (message) => {
@@ -15,6 +15,19 @@ export const changeLanguage = () => {
     try {
       return dispatch({
         type: LANGUAGE,
+      });
+    } catch (error) {
+      showErrorAlert(error.message);
+    }
+  };
+};
+
+export const changeTheme = (value) => {
+  return function (dispatch) {
+    try {
+      return dispatch({
+        type: THEME,
+        payload: value,
       });
     } catch (error) {
       showErrorAlert(error.message);

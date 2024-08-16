@@ -2,8 +2,11 @@ import React from "react";
 import foto from "../utils/image/facherito.jpeg";
 import { useSelector } from "react-redux";
 import github from "../utils/image/github.png";
+import githubW from "../utils/image/githubWhite.png";
 import linkedin from "../utils/image/linkedin.png";
-import twitter from "../utils/image/twitter.png";
+import linkedinW from "../utils/image/linkedinW.png";
+import x from "../utils/image/X.png";
+import xw from "../utils/image/XW.png";
 
 function Head() {
   const language = useSelector((state) => state.language);
@@ -30,10 +33,16 @@ function Head() {
               target="_blank"
               rel="noreferrer"
             >
+              {/* Imagen de GitHub cambia según el modo */}
               <img
                 src={github}
                 alt="githubIco"
-                className="w-10 relative top-0.5 mr-3"
+                className="w-10 relative top-0.5 mr-3 dark:hidden"
+              />
+              <img
+                src={githubW}
+                alt="githubIco"
+                className="w-10 relative top-0.5 mr-3 hidden dark:inline"
               />
             </a>
             <a
@@ -41,10 +50,16 @@ function Head() {
               target="_blank"
               rel="noreferrer"
             >
+             
               <img
                 src={linkedin}
-                alt="linkedinIco"
-                className="w-12 relative bottom-0.5 mr-4"
+                alt="githubIco"
+                className="w-10 relative top-0.5 mr-3 dark:hidden"
+              />
+              <img
+                src={linkedinW}
+                alt="githubIco"
+                className="w-10 relative top-0.5 mr-3 hidden dark:inline"
               />
             </a>
             <a
@@ -52,15 +67,21 @@ function Head() {
               target="_blank"
               rel="noreferrer"
             >
+              
               <img
-                src={twitter}
-                alt="twitterIco"
-                className="w-10 relative top-0.5 mr-5"
+                src={x}
+                alt="githubIco"
+                className="w-10 relative top-0.5 mr-3 dark:hidden"
+              />
+              <img
+                src={xw}
+                alt="githubIco"
+                className="w-10 relative top-0.5 mr-3 hidden dark:inline"
               />
             </a>
           </div>
         </div>
-        <div className="col-span-2 flex items-center justify-center">
+        <div className="col-span-2 ml-10 flex items-center justify-center">
           <img
             src={foto}
             alt="Imagen Franco Adamoli"
@@ -69,7 +90,7 @@ function Head() {
         </div>
       </div>
       {language ? (
-        <div className="text-light text-parrafo dark:text-dark text-center mb-2 mx-4">
+        <div className="text-light text-parrafo dark:text-dark text-center mt-8">
           En el último año, he ampliado mi experiencia al trabajar como
           programador web, especializándome en JavaScript y WordPress, lo que me
           ha permitido desarrollar habilidades robustas en el desarrollo web. Mi
@@ -81,7 +102,7 @@ function Head() {
           en las interacciones sociales.
         </div>
       ) : (
-        <div className="text-light text-parrafo dark:text-dark text-center mb-2 mx-4">
+        <div className="text-light text-parrafo dark:text-dark text-center mt-8">
           In the past year, I have expanded my experience by working as a web
           developer, specializing in JavaScript and WordPress, which has allowed
           me to develop robust skills in web development. My previous work

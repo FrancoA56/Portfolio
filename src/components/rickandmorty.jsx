@@ -17,7 +17,8 @@ import RYMLogin1 from "../utils/image/proyectos/proyecto rickandmorty/login.jpg"
 import RYMLogin2 from "../utils/image/proyectos/proyecto rickandmorty/loginMarcado.jpg";
 import { useSelector } from "react-redux";
 
-const customStyles = {
+// Función para obtener los estilos personalizados del modal
+const getCustomStyles = (theme) => ({
   content: {
     top: "50%",
     left: "50%",
@@ -29,13 +30,20 @@ const customStyles = {
     maxWidth: "600px",
     padding: "20px",
     borderRadius: "8px",
+    background: theme === "dark" ? "#333" : "#fff",
+    color: theme === "dark" ? "#fff" : "#333",
+    border: theme === "dark" ? "1px solid #444" : "1px solid #ddd",
   },
-};
+  overlay: {
+    backgroundColor: theme === "dark" ? "rgba(0, 0, 0, 0.60)" : "rgba(255, 255, 255, 0.60)",
+  },
+});
 
 Modal.setAppElement("#root");
 
 function RickAndMorty() {
   const language = useSelector((state) => state.language);
+  const theme = useSelector((state) => state.theme);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
@@ -160,12 +168,12 @@ function RickAndMorty() {
               </Slide>
             </Slider>
             <div className="flex justify-center mx-auto items-center">
-              <ButtonBack className="">
+              <ButtonBack>
                 <span className="material-symbols-outlined">
                   navigate_before
                 </span>
               </ButtonBack>
-              <ButtonNext className="">
+              <ButtonNext>
                 <span className="material-symbols-outlined">navigate_next</span>
               </ButtonNext>
             </div>
@@ -175,10 +183,12 @@ function RickAndMorty() {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={getCustomStyles(theme)}
         contentLabel="Descripción del proyecto"
       >
-        <h2 className="text-center mb-4">{language ? "Descripción del Proyecto" : "Proyect Description"}</h2>
+        <h2 className="text-center mb-4">
+          {language ? "Descripción del Proyecto" : "Project Description"}
+        </h2>
         <div>
           {language ? (
             <div className="pr-10 pl-4 pb-10 pt-4">
@@ -205,7 +215,7 @@ function RickAndMorty() {
         </div>
         <button
           onClick={closeModal}
-          className="mt-4 p-2 bg-mainL dark:bg-mainD text-white rounded"
+          className="mt-4 p-2 bg-mainL dark:bg-mainD text-white rounded mx-auto block"
         >
           {language ? "Cerrar" : "Close"}
         </button>

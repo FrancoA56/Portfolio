@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { changeTheme } from "../Redux/actions";
 
 const DarkMode = () => {
+  const dispatch = useDispatch();
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
@@ -11,12 +14,14 @@ const DarkMode = () => {
     document.documentElement.classList.add("dark");
     localStorage.theme = "dark";
     setIsDarkMode(true);
+    dispatch(changeTheme("dark"))
   };
 
   const setLightTheme = () => {
     document.documentElement.classList.remove("dark");
     localStorage.theme = "light";
     setIsDarkMode(false);
+    dispatch(changeTheme("light"))
   };
 
   const onThemeSwitcherItemClick = (theme) => {
@@ -30,10 +35,14 @@ const DarkMode = () => {
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
+      dispatch(changeTheme("dark"))
+
     } else {
       document.documentElement.classList.remove("dark");
+      dispatch(changeTheme("light"))
+
     }
-  }, [isDarkMode]);
+  }, [isDarkMode, dispatch]);
 
   return (
     <div className="flex mr-8">

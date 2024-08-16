@@ -19,7 +19,7 @@ import WsMarcas from "../utils/image/proyectos/ws-dyr/marcas.png";
 import WsNav from "../utils/image/proyectos/ws-dyr/nav.png";
 import { useSelector } from "react-redux";
 
-const customStyles = {
+const getCustomStyles = (theme) => ({
   content: {
     top: "50%",
     left: "50%",
@@ -31,13 +31,20 @@ const customStyles = {
     maxWidth: "600px",
     padding: "20px",
     borderRadius: "8px",
+    background: theme === "dark" ? "#333" : "#fff",
+    color: theme === "dark" ? "#fff" : "#333",
+    border: theme === "dark" ? "1px solid #444" : "1px solid #ddd",
   },
-};
+    overlay: {
+      backgroundColor: theme === "dark" ? "rgba(0, 0, 0, 0.60)" : "rgba(255, 255, 255, 0.60)", // Fondo alrededor del modal
+    },
+});
 
 Modal.setAppElement("#root");
 
 function Wholesale() {
   const language = useSelector((state) => state.language);
+  const theme = useSelector((state) => state.theme);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
@@ -72,12 +79,13 @@ function Wholesale() {
             </div>
             <div className="text-start pl-1 flex">
               <div className="text-light dark:text-dark mr-4">
-                {language ? "Servidor" : "Back"}</div>
+                {language ? "Servidor" : "Back"}
+              </div>
               <a
                 href="https://github.com/FrancoA56/Wholesale"
                 target="_blank"
                 rel="noreferrer"
-                className="text-mainL dark:text-mainD "
+                className="text-mainL dark:text-mainD"
               >
                 {language ? "Cliente" : "Front"}
               </a>
@@ -90,7 +98,7 @@ function Wholesale() {
               rel="noreferrer"
               className="text-mainL dark:text-mainD font-semibold"
             >
-              {language ? "URL" : "Deploy" }
+              {language ? "URL" : "Deploy"}
             </a>
           </div>
           <div className="flex justify-center my-3">
@@ -189,10 +197,12 @@ function Wholesale() {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={getCustomStyles(theme)}
         contentLabel="Descripción del proyecto"
       >
-        <h2 className="text-center mb-4">{language ? "Descripción del Proyecto" : "Proyect Description"}</h2>
+        <h2 className="text-center mb-4">
+          {language ? "Descripción del Proyecto" : "Project Description"}
+        </h2>
         <div>
           {language ? (
             <div className="pr-10 pl-4 pb-10 pt-4">
@@ -223,19 +233,16 @@ function Wholesale() {
               category, type, name, price, and color, allowing users to add them
               to their shopping cart. Users have the option to choose a service
               with or without deployment before proceeding to the PayPal payment
-              gateway. Additionally, the platform includes registration, login,
-              and password recovery functionalities through the user's email.
-              Users can also register through third-party platforms like Google
-              and Github. For better website management, the admin user can
-              access the Admin Panel to manage users, add and edit products,
-              review user reviews, and confirm and monitor completed purchases.
+              gateway. Additionally, it includes registration, login, and
+              password recovery functionalities via user email, along with third
+              party registration through Google and Github. For better page
+              management, the admin user can access the Admin Panel to manage
+              users, add and edit products, review user feedback, and confirm
+              and control purchases made.
             </div>
           )}
         </div>
-        <button
-          onClick={closeModal}
-          className="mt-4 p-2 bg-mainL dark:bg-mainD text-white rounded"
-        >
+        <button onClick={closeModal} className="mt-4 p-2 bg-mainL dark:bg-mainD text-white rounded mx-auto block">
           {language ? "Cerrar" : "Close"}
         </button>
       </Modal>
