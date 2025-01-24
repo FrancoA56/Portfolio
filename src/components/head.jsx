@@ -1,15 +1,6 @@
 import React from "react";
-import foto from "../utils/image/facherito.jpeg";
+import foto from "../utils/image/facherito.webp";
 import { useSelector } from "react-redux";
-import github from "../utils/image/github.png";
-import githubR from "../utils/image/githubR.png";
-import githubW from "../utils/image/githubWhite.png";
-import linkedin from "../utils/image/linkedin.png";
-import linkedinW from "../utils/image/linkedinW.png";
-import linkedinN from "../utils/image/linkedinN.png";
-import x from "../utils/image/X.png";
-import xv from "../utils/image/XV.png";
-import xw from "../utils/image/XW.png";
 
 function Head() {
   const language = useSelector((state) => state.language);
@@ -19,286 +10,213 @@ function Head() {
       <div className="grid grid-cols-5 items-center justify-center">
         <div className="col-span-3 flex flex-col items-start justify-center">
           <div className="flex flex-row justify-center text-superTitulo">
-            <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700 ease-in cursor-pointer">
               F
             </span>
-            <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700   ease-in cursor-pointer">
               r
             </span>
-            <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700   ease-in cursor-pointer">
               a
             </span>
-            <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700   ease-in cursor-pointer">
               n
             </span>
-            <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700   ease-in cursor-pointer">
               c
             </span>
-            <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700   ease-in cursor-pointer">
               o
             </span>
-            <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700   ease-in cursor-pointer">
               &nbsp;
             </span>{" "}
             {/* Espacio */}
-            <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700   ease-in cursor-pointer">
               A
             </span>
-            <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700   ease-in cursor-pointer">
               d
             </span>
-            <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700   ease-in cursor-pointer">
               a
             </span>
-            <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700   ease-in cursor-pointer">
               m
             </span>
-            <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700   ease-in cursor-pointer">
               o
             </span>
-            <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700   ease-in cursor-pointer">
               l
             </span>
-            <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700 transition ease-in-out">
+            <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700   ease-in cursor-pointer">
               i
             </span>
           </div>
 
           {language ? (
             <div className="flex flex-row justify-start text-titulo">
-              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700   ease-in cursor-pointer">
                 D
               </span>
-              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700   ease-in cursor-pointer">
                 e
               </span>
-              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700   ease-in cursor-pointer">
                 s
               </span>
-              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700   ease-in cursor-pointer">
                 a
               </span>
-              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700   ease-in cursor-pointer">
                 r
               </span>
-              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700   ease-in cursor-pointer">
                 r
               </span>
-              <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700   ease-in cursor-pointer">
                 o
               </span>
-              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700   ease-in cursor-pointer">
                 l
               </span>
-              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700   ease-in cursor-pointer">
                 l
               </span>
-              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700   ease-in cursor-pointer">
                 a
               </span>
-              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700   ease-in cursor-pointer">
                 d
               </span>
-              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700   ease-in cursor-pointer">
                 o
               </span>
-              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700   ease-in cursor-pointer">
                 r
               </span>
-              <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700   ease-in cursor-pointer">
                 &nbsp;
               </span>
-              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700   ease-in cursor-pointer">
                 W
               </span>
-              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700   ease-in cursor-pointer">
                 e
               </span>
-              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700   ease-in cursor-pointer">
                 b
               </span>
-              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700   ease-in cursor-pointer">
                 &nbsp;
               </span>
-              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700   ease-in cursor-pointer">
                 F
               </span>
-              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700   ease-in cursor-pointer">
                 u
               </span>
-              <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700   ease-in cursor-pointer">
                 l
               </span>
-              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700   ease-in cursor-pointer">
                 l
               </span>
-              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700   ease-in cursor-pointer">
                 s
               </span>
-              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700   ease-in cursor-pointer">
                 t
               </span>
-              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700   ease-in cursor-pointer">
                 a
               </span>
-              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700   ease-in cursor-pointer">
                 c
               </span>
-              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700   ease-in cursor-pointer">
                 k
               </span>
             </div>
           ) : (
-            <div className="flex flex-row justify-start text-subtitulo">
-              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700 transition ease-in-out">
+            <div className="flex flex-row justify-start text-titulo">
+              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700   ease-in cursor-pointer">
                 F
               </span>
-              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700   ease-in cursor-pointer">
                 u
               </span>
-              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700   ease-in cursor-pointer">
                 l
               </span>
-              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700   ease-in cursor-pointer">
                 l
               </span>
-              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700   ease-in cursor-pointer">
                 &nbsp;
               </span>
-              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700   ease-in cursor-pointer">
                 S
               </span>
-              <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700   ease-in cursor-pointer">
                 t
               </span>
-              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700   ease-in cursor-pointer">
                 a
               </span>
-              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700   ease-in cursor-pointer">
                 c
               </span>
-              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700   ease-in cursor-pointer">
                 k
               </span>
-              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700   ease-in cursor-pointer">
                 &nbsp;
               </span>
-              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700   ease-in cursor-pointer">
                 W
               </span>
-              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700   ease-in cursor-pointer">
                 e
               </span>
-              <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700   ease-in cursor-pointer">
                 b
               </span>
-              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700   ease-in cursor-pointer">
                 &nbsp;
               </span>
-              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700   ease-in cursor-pointer">
                 D
               </span>
-              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700   ease-in cursor-pointer">
                 e
               </span>
-              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-yellow-700 dark:hover:text-yellow-700   ease-in cursor-pointer">
                 v
               </span>
-              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-purple-700 dark:hover:text-purple-700   ease-in cursor-pointer">
                 e
               </span>
-              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-pink-700 dark:hover:text-pink-700   ease-in cursor-pointer">
                 l
               </span>
-              <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-orange-700 dark:hover:text-orange-700   ease-in cursor-pointer">
                 o
               </span>
-              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-red-700 dark:hover:text-red-700   ease-in cursor-pointer">
                 p
               </span>
-              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-blue-700 dark:hover:text-blue-700   ease-in cursor-pointer">
                 e
               </span>
-              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700 transition ease-in-out">
+              <span className="text-light dark:text-dark hover:text-green-700 dark:hover:text-green-700   ease-in cursor-pointer">
                 r
               </span>
             </div>
           )}
-
-          <div className="flex mt-4">
-            <a
-              href="https://github.com/FrancoA56"
-              target="_blank"
-              rel="noreferrer"
-              className="group"
-            >
-              {/* Imagen de GitHub cambia según el modo */}
-              <img
-                src={github}
-                alt="githubIco"
-                className="w-10 relative top-0.5 mr-3 dark:hidden group-hover:hidden transition ease-in-out "
-              />
-              <img
-                src={githubW}
-                alt="githubIco"
-                className="w-10 relative top-0.5 mr-3 hidden dark:inline group-hover:hidden transition ease-in-out "
-              />
-              <img
-                src={githubR}
-                alt="githubIco"
-                className="w-10 relative top-0.5 mr-3 hidden group-hover:inline transition ease-in-out "
-              />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/franco-adamoli/"
-              target="_blank"
-              rel="noreferrer"
-              className="group"
-            >
-              {/* Imagen de LinkedIn cambia según el modo */}
-              <img
-                src={linkedin}
-                alt="linkedinIco"
-                className="w-10 relative top-0.5 mr-3 dark:hidden group-hover:hidden transition ease-in-out"
-              />
-              <img
-                src={linkedinW}
-                alt="linkedinIco"
-                className="w-10 relative top-0.5 mr-3 hidden dark:inline group-hover:hidden transition ease-in-out"
-              />
-              <img
-                src={linkedinN}
-                alt="linkedinIco"
-                className="w-10 relative top-0.5 mr-3 hidden group-hover:inline transition ease-in-out"
-              />
-            </a>
-
-            <a
-              href="https://twitter.com/FrancoDev56"
-              target="_blank"
-              rel="noreferrer"
-              className="group"
-            >
-              {/* Imagen de Twitter cambia según el modo */}
-              <img
-                src={x}
-                alt="twitterIco"
-                className="w-10 relative top-0.5 mr-3 dark:hidden group-hover:hidden transition ease-in-out"
-              />
-              <img
-                src={xw}
-                alt="twitterIco"
-                className="w-10 relative top-0.5 mr-3 hidden dark:inline group-hover:hidden transition ease-in-out"
-              />
-              <img
-                src={xv}
-                alt="twitterIco"
-                className="w-10 relative top-0.5 mr-3 hidden group-hover:inline transition ease-in-out"
-              />
-            </a>
-          </div>
         </div>
+
         <div className="col-span-2 ml-10 flex items-center justify-center">
           <img
             src={foto}

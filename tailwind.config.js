@@ -10,6 +10,8 @@ module.exports = {
         mainL: "#004F3A",
         bgcLight: "#F1EFEF",
         bgcDark: "#F1EFEF",
+        celesteFondo: "#72c5e6",
+        azulFondo: "#04344c"
       },
       fontSize: {
         parrafo: "1.2rem",
@@ -19,8 +21,8 @@ module.exports = {
         superTitulo: "4rem"
       },
       backgroundImage: {
-        'darkimg': "url('/src/utils/image/fondo-dark.jpg')",
-        'lightimg': "url('/src/utils/image/fondo-light.jpg')",
+        'darkimg': "url('/src/utils/image/fondo-dark.webp')",
+        'lightimg': "url('/src/utils/image/fondo-light.webp')",
       },
       boxShadow: {
         'dark': '20px 20px 50px rgba(0, 0, 0, 0.1)',

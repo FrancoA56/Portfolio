@@ -1,18 +1,19 @@
 import React from "react";
-import javascript from "../utils/image/JS.png";
-import typescript from "../utils/image/typescript.png";
-import css from "../utils/image/CSS.png";
-import html from "../utils/image/HTML.png";
-import nodejs from "../utils/image/NodeJS.png";
-import react from "../utils/image/react.png";
-import redux from "../utils/image/redux.png";
-import sequalize from "../utils/image/sequalize.png";
-import sql from "../utils/image/sql.png";
-import git from "../utils/image/git.png";
-import wordpress from "../utils/image/wordpress.png";
-import wordpressB from "../utils/image/wordpressB.png";
+import javascript from "../utils/image/JS.webp";
+import typescript from "../utils/image/typescript.webp";
+import css from "../utils/image/CSS.webp";
+import html from "../utils/image/HTML.webp";
+import nodejs from "../utils/image/NodeJS.webp";
+import react from "../utils/image/react.webp";
+import redux from "../utils/image/redux.webp";
+import sequalize from "../utils/image/sequalize.webp";
+import sql from "../utils/image/sql.webp";
+import git from "../utils/image/git.webp";
+import wordpress from "../utils/image/wordpress.webp";
+import wordpressB from "../utils/image/wordpressB.webp";
+import prisma from "../utils/image/logo-prisma.png";
+import prismaWhite from "../utils/image/prismaBlanco.png";
 import { useSelector } from "react-redux";
-
 
 function Estudios() {
   const language = useSelector((state) => state.language);
@@ -92,9 +93,21 @@ function Estudios() {
           title="Wordpress"
           className="w-14 h-14 relative ml-6 top-2 transform transition-transform hover:scale-125 hidden dark:inline"
         />
+        <img
+          src={prisma}
+          alt="prisma"
+          title="Prisma"
+          className="w-14 h-14 relative ml-6 top-2  transform transition-transform hover:scale-125 inline dark:hidden"
+        />
+        <img
+          src={prismaWhite}
+          alt="prisma"
+          title="Prisma"
+          className="w-14 h-14 relative ml-6 top-2  transform transition-transform hover:scale-125 hidden dark:inline"
+        />
       </div>
       {language ? (
-        <div className="text-light dark:text-dark mt-4 mb-4">
+        <div className="text-light dark:text-dark mt-4 mb-4 indent-6">
           Desarrollador Web Full Stack con una sólida formación obtenida en{" "}
           <a
             href="https://www.soyhenry.com/"
@@ -109,7 +122,7 @@ function Estudios() {
           así un sólido conocimiento en las siguientes tecnologías.
         </div>
       ) : (
-        <div className="text-light dark:text-dark mt-4 mb-4">
+        <div className="text-light dark:text-dark mt-4 mb-4 indent-6">
           Full Stack Web Developer with a strong background obtained at{" "}
           <a
             href="https://www.soyhenry.com/"
@@ -125,7 +138,7 @@ function Estudios() {
         </div>
       )}
       {language ? (
-        <div>
+        <div className="indent-6">
           Tambien estudié ingeniería e inglés, lo que me proporcionó una sólida
           base en matemáticas y en el idioma. Ahora, con la experiencia
           adquirida en el desarrollo web, estoy entusiasmado por aplicar mis
@@ -133,7 +146,7 @@ function Estudios() {
           mundo digital.
         </div>
       ) : (
-        <div>
+        <div className="indent-6">
           I also studied engineering and English, which provided me with a
           strong foundation in mathematics and the language. Now, with the
           experience gained in web development, I am excited to apply my
@@ -164,7 +177,6 @@ function Estudios() {
           </a>
         </div>
       )}
-      
     </div>
   );
 }
