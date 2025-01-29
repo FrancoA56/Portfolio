@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { changeLanguage } from "../Redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
@@ -26,7 +26,6 @@ function Nav() {
   const [currentPage, setCurrentPage] = useState("Inicio");
   const [direction, setDirection] = useState(0);
   const pages = ["Inicio", "Estudios", "Proyectos", "Contacto"];
-  const [menuOpen, setMenuOpen] = useState(false);
 
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 640px)",
@@ -35,20 +34,6 @@ function Nav() {
   const cambiarIdioma = () => {
     dispatch(changeLanguage());
   };
-
-  useEffect(() => {
-    // Controlar el overflow del body cuando el menú está abierto
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    // Limpiar estilo al desmontar
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [menuOpen])
 
   const variants = {
     enter: (direction) => ({
@@ -149,29 +134,13 @@ function Nav() {
           </div>
         </div>
       ) : (
-        !menuOpen && (
-          <button
-            className="sm:hidden flex items-center pt-6 ml-6"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <i className="fa-solid fa-bars"></i>
-          </button>
-        )
-      )}
-      {menuOpen && (
-        <div className="bg-celesteFondo dark:bg-azulFondo transition ease-in-out p-6 relative">
-          <div className="flex items-center space-x-4 justify-between mb-2">
-            <button
-              className="flex items-center"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              <i className="fa-solid fa-bars"></i>
-            </button>
-            <DarkMode />
-            <button onClick={cambiarIdioma} className="pointer">
+        <div className="bg-lightimg dark:bg-darkimg transition ease-in-out px-6 py-2 relative">
+          <div className="grid grid-cols-3">
+            <DarkMode className="flex justify-start items-start"/>
+            <button onClick={cambiarIdioma} className="pointer flex items-center justify-center">
               {language ? <div>Español</div> : <div> English </div>}
             </button>
-            <div className="flex mb-2">
+            <div className="flex justify-end items-center mb-1 mr-0 ">
               <a
                 href="https://github.com/FrancoA56"
                 target="_blank"

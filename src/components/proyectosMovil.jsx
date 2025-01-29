@@ -1,46 +1,38 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Wholesale from "./wholesale";
-import Cos from "./cos";
-import GamesCon from "./gamescon";
-import CodeCraftedTemplates from "./codecraftedtemplates";
-import RickAndMorty from "./rickandmorty";
+import Wholesale from "./wholesaleMovil";
+import Cos from "./cosMovil";
+import GamesCon from "./gamesconMovil";
+import CodeCraftedTemplates from "./codecraftedtemplatesMovil";
+import RickAndMorty from "./rickandmortyMovil";
 
-function ProyectosLaborales() {
+function ProyectosLaboralesMobile() {
   const [currentProject, setCurrentProject] = useState(0);
-  const [direction, setDirection] = useState(0); // Estado para manejar la dirección
+  const [direction, setDirection] = useState(0);
+
   const projects = [
-    "Wholesale",
-    "COS",
-    "Code Crafted Templates",
-    "GamesCon",
-    "Rick & Morty",
+    { name: "Wholesale", component: <Wholesale /> },
+    { name: "COS", component: <Cos /> },
+    { name: "Code Crafted Templates", component: <CodeCraftedTemplates /> },
+    { name: "GamesCon", component: <GamesCon /> },
+    { name: "Rick & Morty", component: <RickAndMorty /> },
   ];
-  
-  const handleNext = () => {
-    setDirection(1); // Dirección hacia la derecha
-    setCurrentProject((prev) => (prev + 1) % projects.length);
+
+  const handleSelectChange = (e) => {
+    const newIndex = parseInt(e.target.value);
+    setDirection(newIndex > currentProject ? 1 : -1);
+    setCurrentProject(newIndex);
   };
 
-  const handlePrev = () => {
-    setDirection(-1); // Dirección hacia la izquierda
-    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
-  };
-
-  const renderProject = () => {
-    switch (projects[currentProject]) {
-      case "Wholesale":
-        return <Wholesale />;
-      case "COS":
-        return <Cos />;
-      case "Code Crafted Templates":
-        return <CodeCraftedTemplates />;
-      case "GamesCon":
-        return <GamesCon />;
-      case "Rick & Morty":
-        return <RickAndMorty />;
-      default:
-        return <Wholesale />;
+  const handleSwipe = (dir) => {
+    if (dir === "left") {
+      setDirection(1);
+      setCurrentProject((prev) => (prev + 1) % projects.length);
+    } else {
+      setDirection(-1);
+      setCurrentProject(
+        (prev) => (prev - 1 + projects.length) % projects.length
+      );
     }
   };
 
@@ -49,10 +41,7 @@ function ProyectosLaborales() {
       x: direction > 0 ? 100 : -100,
       opacity: 0,
     }),
-    center: {
-      x: 0,
-      opacity: 1,
-    },
+    center: { x: 0, opacity: 1 },
     exit: (direction) => ({
       x: direction < 0 ? 100 : -100,
       opacity: 0,
@@ -60,26 +49,27 @@ function ProyectosLaborales() {
   };
 
   return (
-    <div>
-      <nav className="flex-grow flex">
-        {projects.map((project, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              const newDirection = index > currentProject ? 1 : -1;
-              setDirection(newDirection);
-              setCurrentProject(index);
-            }}
-            className={
-              currentProject === index
-                ? "font-bold text-mainL dark:text-mainD"
-                : ""
-            }
-          >
-            {project}
-          </button>
-        ))}
-      </nav>
+    <div className="flex flex-col items-center gap-4 p-4">
+      <div className="flex justify-between mb-0">
+        <button onClick={() => handleSwipe("right")} className="text-2xl">
+          ⬅️
+        </button>
+        <select
+          onChange={handleSelectChange}
+          value={currentProject}
+          className="mx-8 border rounded-md bg-mainL dark:bg-mainD text-white dark:text-black flex justify-center items-center text-center"
+        >
+          {projects.map((project, index) => (
+            <option key={index} value={index}>
+              {project.name}
+            </option>
+          ))}
+        </select>
+        <button onClick={() => handleSwipe("left")} className="text-2xl">
+          ➡️
+        </button>
+      </div>
+
       <AnimatePresence mode="wait" custom={direction}>
         <motion.div
           key={currentProject}
@@ -89,20 +79,18 @@ function ProyectosLaborales() {
           exit="exit"
           variants={variants}
           transition={{ duration: 0.2 }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          onDragEnd={(e, { offset }) =>
+            handleSwipe(offset.x > 0 ? "right" : "left")
+          }
+          className="w-full"
         >
-          {renderProject()}
+          {projects[currentProject].component}
         </motion.div>
       </AnimatePresence>
-      <div className="flex justify-between omt-4">
-        <button onClick={handlePrev}>
-          <span className="material-symbols-outlined">navigate_before</span>
-        </button>
-        <button onClick={handleNext}>
-          <span className="material-symbols-outlined">navigate_next</span>
-        </button>
-      </div>
     </div>
   );
 }
 
-export default ProyectosLaborales;
+export default ProyectosLaboralesMobile;

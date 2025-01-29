@@ -23,6 +23,22 @@ import shop from "../utils/image/proyectos/proyecto CTT/shop.jpg";
 import team from "../utils/image/proyectos/proyecto CTT/team.jpg";
 import { useSelector } from "react-redux";
 
+const images = [
+  homeLight,
+  homeDark,
+  login,
+  register,
+  profile,
+  shop,
+  cart,
+  detail,
+  pay,
+  preview,
+  previewEdited,
+  panelAdmin,
+  team,
+];
+
 const getCustomStyles = (theme) => ({
   content: {
     top: "50%",
@@ -88,7 +104,12 @@ function CTT() {
             <div className="text-end pr-1">
               {language ? "Panel de Administrador:" : "Admin Panel:"}
             </div>
-            <div className="text-start pl-1">React-Admin</div>
+            <a
+              href="https://github.com/FrancoA56/FinalProyectAdmin"
+              className="text-mainL dark:text-mainD flex justify-start pl-1"
+              >
+              React-Admin
+            </a>
           </div>
           <div className="grid grid-cols-2">
             <div className="text-end pr-1">
@@ -136,100 +157,23 @@ function CTT() {
           <CarouselProvider
             naturalSlideWidth={100}
             naturalSlideHeight={52}
-            totalSlides={13}
+            totalSlides={images.length}
           >
-            <Slider className="my-auto">
-              <Slide index={0}>
-                <img
-                  src={homeLight}
-                  alt="homeLightCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={1}>
-                <img
-                  src={homeDark}
-                  alt="homeDarkCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={2}>
-                <img
-                  src={login}
-                  alt="loginCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={3}>
-                <img
-                  src={register}
-                  alt="registerCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={4}>
-                <img
-                  src={profile}
-                  alt="profileCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={5}>
-                <img
-                  src={shop}
-                  alt="shopCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={6}>
-                <img
-                  src={cart}
-                  alt="cartCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={7}>
-                <img
-                  src={detail}
-                  alt="detailCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={8}>
-                <img
-                  src={pay}
-                  alt="payCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={9}>
-                <img
-                  src={preview}
-                  alt="previewCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={10}>
-                <img
-                  src={previewEdited}
-                  alt="previewEditedCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={11}>
-                <img
-                  src={panelAdmin}
-                  alt="panelAdminCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={12}>
-                <img
-                  src={team}
-                  alt="teamCTT"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
+            <Slider
+              onTouchStart={(e) => e.stopPropagation()}
+              onTouchMove={(e) => e.stopPropagation()}
+              onWheel={(e) => e.stopPropagation()}
+            >
+              {images.map((img, index) => (
+                <Slide key={index} index={index}>
+                  <img
+                    src={img}
+                    alt={`CodeCraftedTemplates ${index}`}
+                    loading="lazy"
+                    className="rounded shadow-lg hover:scale-105 transition-transform"
+                  />
+                </Slide>
+              ))}{" "}
             </Slider>
             <div className="flex justify-center mx-auto items-center">
               <ButtonBack>

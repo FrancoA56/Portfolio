@@ -19,6 +19,18 @@ import WsMarcas from "../utils/image/proyectos/ws-dyr/marcas.png";
 import WsNav from "../utils/image/proyectos/ws-dyr/nav.png";
 import { useSelector } from "react-redux";
 
+const images = [
+  WsInicio,
+  WsMarca,
+  WsForm,
+  WsFooter,
+  WsMarcas,
+  WsNav,
+  WsContacto,
+  WsCarrousel,
+  WsAbout,
+];
+
 const getCustomStyles = (theme) => ({
   content: {
     top: "50%",
@@ -35,9 +47,10 @@ const getCustomStyles = (theme) => ({
     color: theme === "dark" ? "#fff" : "#333",
     border: theme === "dark" ? "1px solid #444" : "1px solid #ddd",
   },
-    overlay: {
-      backgroundColor: theme === "dark" ? "rgba(0, 0, 0, 0.60)" : "rgba(255, 255, 255, 0.60)", // Fondo alrededor del modal
-    },
+  overlay: {
+    backgroundColor:
+      theme === "dark" ? "rgba(0, 0, 0, 0.60)" : "rgba(255, 255, 255, 0.60)", // Fondo alrededor del modal
+  },
 });
 
 Modal.setAppElement("#root");
@@ -78,9 +91,6 @@ function Wholesale() {
               {language ? "Repositorios:" : "Repositories:"}
             </div>
             <div className="text-start pl-1 flex">
-              <div className="text-light dark:text-dark mr-4">
-                {language ? "Servidor" : "Back"}
-              </div>
               <a
                 href="https://github.com/FrancoA56/Wholesale"
                 target="_blank"
@@ -114,72 +124,23 @@ function Wholesale() {
           <CarouselProvider
             naturalSlideWidth={100}
             naturalSlideHeight={52}
-            totalSlides={9}
+            totalSlides={images.length}
           >
-            <Slider className="my-auto">
-              <Slide index={0}>
-                <img
-                  src={WsInicio}
-                  alt="WholesaleInicio"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={1}>
-                <img
-                  src={WsMarca}
-                  alt="WholesaleMarca"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={2}>
-                <img
-                  src={WsForm}
-                  alt="WholesaleForm"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={3}>
-                <img
-                  src={WsFooter}
-                  alt="WholesaleFooter"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={4}>
-                <img
-                  src={WsMarcas}
-                  alt="WholesaleMarcas"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={5}>
-                <img
-                  src={WsNav}
-                  alt="WholesaleNav"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={6}>
-                <img
-                  src={WsContacto}
-                  alt="WholesaleContacto"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={7}>
-                <img
-                  src={WsCarrousel}
-                  alt="WholesaleCarrousel"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={8}>
-                <img
-                  src={WsAbout}
-                  alt="WholesaleAbout"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
+            <Slider
+              onTouchStart={(e) => e.stopPropagation()}
+              onTouchMove={(e) => e.stopPropagation()}
+              onWheel={(e) => e.stopPropagation()}
+            >
+              {images.map((img, index) => (
+                <Slide key={index} index={index}>
+                  <img
+                    src={img}
+                    alt={`Wholesale ${index}`}
+                    loading="lazy"
+                    className="rounded shadow-lg hover:scale-105 transition-transform"
+                  />
+                </Slide>
+              ))}
             </Slider>
             <div className="flex justify-center mx-auto items-center">
               <ButtonBack className="">
@@ -242,7 +203,10 @@ function Wholesale() {
             </div>
           )}
         </div>
-        <button onClick={closeModal} className="mt-4 p-2 bg-mainL dark:bg-mainD text-white rounded mx-auto block">
+        <button
+          onClick={closeModal}
+          className="mt-4 p-2 bg-mainL dark:bg-mainD text-white rounded mx-auto block"
+        >
           {language ? "Cerrar" : "Close"}
         </button>
       </Modal>

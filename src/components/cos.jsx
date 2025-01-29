@@ -17,6 +17,16 @@ import CosAbout from "../utils/image/proyectos/cos/about.png";
 import CosSupply from "../utils/image/proyectos/cos/supply.png";
 import { useSelector } from "react-redux";
 
+const images = [
+  CosInicio,
+  CosPopUp,
+  CosServicios,
+  CosFooter,
+  CosContacto,
+  CosAbout,
+  CosSupply,
+];
+
 // Función para obtener los estilos personalizados del modal
 const getCustomStyles = (theme) => ({
   content: {
@@ -35,7 +45,8 @@ const getCustomStyles = (theme) => ({
     border: theme === "dark" ? "1px solid #444" : "1px solid #ddd",
   },
   overlay: {
-    backgroundColor: theme === "dark" ? "rgba(0, 0, 0, 0.60)" : "rgba(255, 255, 255, 0.60)", // Fondo alrededor del modal
+    backgroundColor:
+      theme === "dark" ? "rgba(0, 0, 0, 0.60)" : "rgba(255, 255, 255, 0.60)", // Fondo alrededor del modal
   },
 });
 
@@ -98,58 +109,23 @@ function COS() {
           <CarouselProvider
             naturalSlideWidth={100}
             naturalSlideHeight={52}
-            totalSlides={7}
+            totalSlides={images.length}
           >
-            <Slider className="my-auto">
-              <Slide index={0}>
-                <img
-                  src={CosInicio}
-                  alt="CosInicio"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={1}>
-                <img
-                  src={CosPopUp}
-                  alt="CosPopUp"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={2}>
-                <img
-                  src={CosServicios}
-                  alt="CosServicios"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={3}>
-                <img
-                  src={CosFooter}
-                  alt="CosFooter"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={4}>
-                <img
-                  src={CosContacto}
-                  alt="CosContacto"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={5}>
-                <img
-                  src={CosAbout}
-                  alt="CosAbout"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={6}>
-                <img
-                  src={CosSupply}
-                  alt="CosSupply"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
+            <Slider
+              onTouchStart={(e) => e.stopPropagation()}
+              onTouchMove={(e) => e.stopPropagation()}
+              onWheel={(e) => e.stopPropagation()}
+            >
+              {images.map((img, index) => (
+                <Slide key={index} index={index}>
+                  <img
+                    src={img}
+                    alt={`COS ${index + 1}`}
+                    loading="lazy"
+                    className="rounded shadow-lg hover:scale-105 transition-transform"
+                  />
+                </Slide>
+              ))}
             </Slider>
             <div className="flex justify-center gap-3 mt-2">
               <ButtonBack>

@@ -10,17 +10,27 @@ function HeadMovil() {
       {/* Encabezado con Imagen y Nombre */}
       <div className="flex items-center justify-between">
         <div className="flex-grow">
-          <h1 className="text-xl font-bold ml-4 text-light dark:text-dark">
+          <h1 className="text-subtitulo font-bold ml-4 text-light dark:text-dark">
             Franco Adamoli
           </h1>
           {language ? (
-            <p className="text-sm text-gray-600 ml-4 dark:text-gray-300">
-              Programador Web - Fullstack
-            </p>
+            <>
+              <p className="text-parrafo text-gray-600 ml-4 dark:text-gray-300">
+                Programador Web
+              </p>
+              <p className="text-parrafo text-gray-600 ml-4 dark:text-gray-300">
+                Fullstack{" "}
+              </p>
+            </>
           ) : (
-            <p className="text-sm text-gray-600 ml-4 dark:text-gray-300">
-              Fullstack - Web Developer
-            </p>
+            <>
+              <p className="text-parrafo text-gray-600 ml-4 dark:text-gray-300">
+                Web Developer
+              </p>
+              <p className="text-parrafo text-gray-600 ml-4 dark:text-gray-300">
+                Fullstack
+              </p>
+            </>
           )}
         </div>
         <div className="ml-4">

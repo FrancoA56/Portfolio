@@ -11,8 +11,8 @@ import sql from "../utils/image/sql.webp";
 import git from "../utils/image/git.webp";
 import wordpress from "../utils/image/wordpress.webp";
 import wordpressB from "../utils/image/wordpressB.webp";
-import prisma from "../utils/image/logo-prisma.png"
-import prismaWhite from "../utils/image/prismaBlanco.png"
+import prisma from "../utils/image/logo-prisma.png";
+import prismaWhite from "../utils/image/prismaBlanco.png";
 import { useSelector } from "react-redux";
 
 function EstudiosMovil() {
@@ -20,6 +20,69 @@ function EstudiosMovil() {
 
   return (
     <div className="text-light text-subtitulo dark:text-dark my-8 px-4">
+      <div className="mt-4 text-base text-justify indent-6">
+        {language ? (
+          <>
+            Desarrollador Web Full Stack con una sólida formación obtenida en{" "}
+            <a
+              href="https://www.soyhenry.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-mainL dark:text-mainD"
+            >
+              SoyHenry
+            </a>
+            , donde cursé aproximadamente 800 horas de teoría y práctica,
+            realizando tres proyectos, dos individuales y uno grupal,
+            adquiriendo así un sólido conocimiento en las siguientes
+            tecnologías.
+          </>
+        ) : (
+          <>
+            Full Stack Web Developer with a strong background obtained at{" "}
+            <a
+              href="https://www.soyhenry.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-mainL dark:text-mainD"
+            >
+              SoyHenry
+            </a>
+            , where I completed approximately 800 hours of theory and practice,
+            working on three projects, two individual and one group project,
+            thus gaining a solid understanding of the following technologies.
+          </>
+        )}
+      </div>
+      <div className="mt-4 text-base text-justify indent-6">
+        {language ? (
+          <>
+            También estudié ingeniería e inglés, lo que me proporcionó una
+            sólida base en matemáticas y en el idioma. Ahora, con la experiencia
+            adquirida en el desarrollo web, estoy entusiasmado por aplicar mis
+            conocimientos para crear soluciones innovadoras y atractivas en el
+            mundo digital.
+          </>
+        ) : (
+          <>
+            I also studied engineering and English, which provided me with a
+            strong foundation in mathematics and the language. Now, with the
+            experience gained in web development, I am excited to apply my
+            knowledge to create innovative and engaging solutions in the digital
+            world.
+          </>
+        )}
+      </div>
+      <div className="mt-1 text-center ">
+        <a
+          href="https://certificates.soyhenry.com/new-cert?id=a107f17276c7f05ef3353f0f2a253b0d79e74b1f156cf89b159deb88debeb9b0"
+          target="_blank"
+          rel="noreferrer"
+          className="text-mainL dark:text-mainD text-xl"
+        >
+          {language ? "Certificado" : "Certificate"}
+        </a>
+      </div>
       <div className="grid grid-cols-3 gap-4 justify-items-center">
         <img
           src={javascript}
@@ -105,69 +168,6 @@ function EstudiosMovil() {
           title="Prisma"
           className="w-14 h-14 relative transform transition-transform hover:scale-125 hidden dark:inline"
         />
-      </div>
-      <div className="mt-4 text-base text-justify indent-6">
-        {language ? (
-          <>
-            Desarrollador Web Full Stack con una sólida formación obtenida en{" "}
-            <a
-              href="https://www.soyhenry.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="text-mainL dark:text-mainD"
-            >
-              SoyHenry
-            </a>
-            , donde cursé aproximadamente 800 horas de teoría y práctica,
-            realizando tres proyectos, dos individuales y uno grupal,
-            adquiriendo así un sólido conocimiento en las siguientes
-            tecnologías.
-          </>
-        ) : (
-          <>
-            Full Stack Web Developer with a strong background obtained at{" "}
-            <a
-              href="https://www.soyhenry.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="text-mainL dark:text-mainD"
-            >
-              SoyHenry
-            </a>
-            , where I completed approximately 800 hours of theory and practice,
-            working on three projects, two individual and one group project,
-            thus gaining a solid understanding of the following technologies.
-          </>
-        )}
-      </div>
-      <div className="mt-4 text-base text-justify indent-6">
-        {language ? (
-          <>
-            También estudié ingeniería e inglés, lo que me proporcionó una
-            sólida base en matemáticas y en el idioma. Ahora, con la experiencia
-            adquirida en el desarrollo web, estoy entusiasmado por aplicar mis
-            conocimientos para crear soluciones innovadoras y atractivas en el
-            mundo digital.
-          </>
-        ) : (
-          <>
-            I also studied engineering and English, which provided me with a
-            strong foundation in mathematics and the language. Now, with the
-            experience gained in web development, I am excited to apply my
-            knowledge to create innovative and engaging solutions in the digital
-            world.
-          </>
-        )}
-      </div>
-      <div className="mt-4 text-center ">
-        <a
-          href="https://certificates.soyhenry.com/new-cert?id=a107f17276c7f05ef3353f0f2a253b0d79e74b1f156cf89b159deb88debeb9b0"
-          target="_blank"
-          rel="noreferrer"
-          className="text-mainL dark:text-mainD text-lg"
-        >
-          {language ? "Certificado" : "Certificate"}
-        </a>
       </div>
     </div>
   );

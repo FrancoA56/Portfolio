@@ -17,6 +17,16 @@ import RYMLogin1 from "../utils/image/proyectos/proyecto rickandmorty/login.jpg"
 import RYMLogin2 from "../utils/image/proyectos/proyecto rickandmorty/loginMarcado.jpg";
 import { useSelector } from "react-redux";
 
+const images = [
+  RYMHome1,
+  RYMHome2,
+  RYMAbout,
+  RYMDetail,
+  RYMFavorites,
+  RYMLogin1,
+  RYMLogin2,
+];
+
 // Función para obtener los estilos personalizados del modal
 const getCustomStyles = (theme) => ({
   content: {
@@ -35,7 +45,8 @@ const getCustomStyles = (theme) => ({
     border: theme === "dark" ? "1px solid #444" : "1px solid #ddd",
   },
   overlay: {
-    backgroundColor: theme === "dark" ? "rgba(0, 0, 0, 0.60)" : "rgba(255, 255, 255, 0.60)",
+    backgroundColor:
+      theme === "dark" ? "rgba(0, 0, 0, 0.60)" : "rgba(255, 255, 255, 0.60)",
   },
 });
 
@@ -114,58 +125,23 @@ function RickAndMorty() {
           <CarouselProvider
             naturalSlideWidth={100}
             naturalSlideHeight={52}
-            totalSlides={7}
+            totalSlides={images.length}
           >
-            <Slider className="my-auto">
-              <Slide index={0}>
-                <img
-                  src={RYMHome1}
-                  alt="RYMHome1"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={1}>
-                <img
-                  src={RYMHome2}
-                  alt="RYMHome2"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={2}>
-                <img
-                  src={RYMAbout}
-                  alt="RYMAbout"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={3}>
-                <img
-                  src={RYMDetail}
-                  alt="RYMDetail"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={4}>
-                <img
-                  src={RYMFavorites}
-                  alt="RYMFavorites"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={5}>
-                <img
-                  src={RYMLogin1}
-                  alt="RYMLogin1"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
-              <Slide index={6}>
-                <img
-                  src={RYMLogin2}
-                  alt="RYMLogin2"
-                  className="transform transition-transform hover:scale-110"
-                />
-              </Slide>
+            <Slider
+              onTouchStart={(e) => e.stopPropagation()}
+              onTouchMove={(e) => e.stopPropagation()}
+              onWheel={(e) => e.stopPropagation()}
+            >
+              {images.map((img, index) => (
+                <Slide key={index} index={index}>
+                  <img
+                    src={img}
+                    alt={`GamesCon ${index}`}
+                    loading="lazy"
+                    className="rounded shadow-lg hover:scale-105 transition-transform"
+                  />
+                </Slide>
+              ))}{" "}
             </Slider>
             <div className="flex justify-center mx-auto items-center">
               <ButtonBack>
@@ -192,24 +168,26 @@ function RickAndMorty() {
         <div>
           {language ? (
             <div className="pr-10 pl-4 pb-10 pt-4">
-              Una Single Page Application (SPA) que consume datos de una API externa
-              y permite la visualización de información general y detallada de más
-              de 500,000 videojuegos. Entre las funcionalidades que dispone esta
-              APP, se encuentra la capacidad de filtrar y ordenar videojuegos por
-              diferentes variables, como género, plataformas, nombre y calificación.
-              Además, la aplicación permite la creación de nuevos videojuegos a
-              través de un formulario controlado, y también ofrece la funcionalidad
-              de registro e inicio de sesión para usuarios autenticados.
+              Una Single Page Application (SPA) que consume datos de una API
+              externa y permite la visualización de información general y
+              detallada de más de 500,000 videojuegos. Entre las funcionalidades
+              que dispone esta APP, se encuentra la capacidad de filtrar y
+              ordenar videojuegos por diferentes variables, como género,
+              plataformas, nombre y calificación. Además, la aplicación permite
+              la creación de nuevos videojuegos a través de un formulario
+              controlado, y también ofrece la funcionalidad de registro e inicio
+              de sesión para usuarios autenticados.
             </div>
           ) : (
             <div className="pr-10 pl-4 pb-10 pt-4">
-              A Single Page Application (SPA) that consumes data from an external
-              API and allows the display of both general and detailed information on
-              over 500,000 video games. This app features the ability to filter and
-              sort video games by various criteria, such as genre, platforms, name,
-              and rating. Additionally, the application allows for the creation of
-              new video games through a controlled form and also offers user
-              registration and login functionality for authenticated users.
+              A Single Page Application (SPA) that consumes data from an
+              external API and allows the display of both general and detailed
+              information on over 500,000 video games. This app features the
+              ability to filter and sort video games by various criteria, such
+              as genre, platforms, name, and rating. Additionally, the
+              application allows for the creation of new video games through a
+              controlled form and also offers user registration and login
+              functionality for authenticated users.
             </div>
           )}
         </div>
