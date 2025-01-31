@@ -39,7 +39,7 @@ const getCustomStyles = (theme) => ({
     width: "80%",
     maxWidth: "600px",
     maxHeight: "100%",
-    height: "70%",
+    height: "45%",
     padding: "20px",
     borderRadius: "8px",
     background: theme === "dark" ? "#333" : "#fff",
@@ -161,7 +161,7 @@ function GamesCon() {
           </h2>
           <p className="text-justify mb-4">
             {language
-              ? "Aplicación web de una sola página (SPA) que consume una API para mostrar un catálogo de videojuegos. Los usuarios pueden registrarse, iniciar sesión y administrar sus cuentas. Ofrece filtrado avanzado de juegos por género, precio y otros criterios."
+              ? "Aplicación web de una sola página (SPA) que consume una API para mostrar un catálogo de mas de mil videojuegos. Los usuarios pueden registrarse, iniciar sesión y administrar sus cuentas. Ofrece filtrado avanzado de juegos por género, precio y otros criterios."
               : "A single-page web application (SPA) that consumes an API to display a video game catalog. Users can register, log in, and manage their accounts. It offers advanced game filtering by genre, price, and other criteria."}
           </p>
           <button

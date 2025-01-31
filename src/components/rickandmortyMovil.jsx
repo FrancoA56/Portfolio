@@ -14,14 +14,12 @@ import RYMAbout from "../utils/image/proyectos/proyecto rickandmorty/about.jpg";
 import RYMDetail from "../utils/image/proyectos/proyecto rickandmorty/detail.jpg";
 import RYMFavorites from "../utils/image/proyectos/proyecto rickandmorty/favorites.jpg";
 import RYMHome1 from "../utils/image/proyectos/proyecto rickandmorty/home.jpg";
-import RYMHome2 from "../utils/image/proyectos/proyecto rickandmorty/home2.jpg";
 import RYMLogin1 from "../utils/image/proyectos/proyecto rickandmorty/login.jpg";
 import RYMLogin2 from "../utils/image/proyectos/proyecto rickandmorty/loginMarcado.jpg";
 import { useSelector } from "react-redux";
 
 const images = [
   RYMHome1,
-  RYMHome2,
   RYMAbout,
   RYMDetail,
   RYMFavorites,

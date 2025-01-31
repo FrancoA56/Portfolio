@@ -47,7 +47,7 @@ const getCustomStyles = (theme) => ({
     width: "80%",
     maxWidth: "600px",
     maxHeight: "100%",
-    height: "55%",
+    height: "60%",
     padding: "20px",
     borderRadius: "8px",
     background: theme === "dark" ? "#333" : "#fff",
@@ -170,8 +170,8 @@ function Wholesale() {
           </h2>
           <p className="text-justify mb-4">
             {language
-              ? "Sitio web corporativo de Wholesale, una aplicación web de una sola página (SPA) que presenta un catálogo de productos de marcas internacionales disponibles para venta mayorista. La plataforma adapta la oferta según el país, ya que algunas marcas no están disponibles en ciertas regiones. Además, cuenta con un servidor desarrollado con Node.js y TypeScript para gestionar el envío de correos electrónicos."
-              : "A single-page application (SPA) showcasing a catalog of international brand products available for wholesale. The platform adapts the product offerings based on the country, as some brands may not be available in certain regions. Additionally, it features a server built with Node.js and TypeScript to handle email delivery."}
+              ? "Sitio web corporativo de Wholesale by D&R, una aplicación web de una sola página (SPA) que presenta un catálogo de productos de marcas internacionales disponibles para venta mayorista. La plataforma adapta la oferta según el país, ya que algunas marcas no están disponibles en ciertas regiones. Además, cuenta con un servidor desarrollado con Node.js y TypeScript para gestionar el envío de correos electrónicos."
+              : "Corporate website for Wholesale by D&R, a single-page application (SPA) showcasing a catalog of international brand products available for wholesale. The platform adapts the product offerings based on the country, as some brands may not be available in certain regions. Additionally, it features a server built with Node.js and TypeScript to handle email delivery."}
           </p>
           <button
             onClick={() => setModalIsOpen(false)}

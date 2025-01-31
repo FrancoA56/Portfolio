@@ -155,7 +155,7 @@ function Estudios() {
         </div>
       )}
       {language ? (
-        <div className="text-semititulo my-6">
+        <div className="text-subtitulo my-6 flex">
           <a
             href="https://certificates.soyhenry.com/new-cert?id=a107f17276c7f05ef3353f0f2a253b0d79e74b1f156cf89b159deb88debeb9b0"
             target="_blank"
@@ -164,11 +164,39 @@ function Estudios() {
           >
             Certificado
           </a>
+          <p>&nbsp;de Programador Web Fullstack en Henry</p>
         </div>
       ) : (
-        <div className=" text-semititulo my-6">
+        <div className="text-subtitulo my-6 flex">
+          <p>Fullstack Web Programmer&nbsp;</p>
           <a
             href="https://certificates.soyhenry.com/new-cert?id=a107f17276c7f05ef3353f0f2a253b0d79e74b1f156cf89b159deb88debeb9b0"
+            target="_blank"
+            rel="noreferrer"
+            className="text-mainL dark:text-mainD"
+          >
+            Certificate
+          </a>
+          <p>&nbsp;at Henry</p>
+        </div>
+      )}
+      {language ? (
+        <div className="text-subtitulo my-6 flex">
+          <a
+            href="https://cert.efset.org/NjSK8Y"
+            target="_blank"
+            rel="noreferrer"
+            className="text-mainL dark:text-mainD"
+          >
+            Certificado
+          </a>
+          <p>&nbsp;de Inglés C1 Advanced</p>
+        </div>
+      ) : (
+        <div className="text-subtitulo my-6 flex">
+          <p>English C1&nbsp;</p>
+          <a
+            href="https://cert.efset.org/NjSK8Y"
             target="_blank"
             rel="noreferrer"
             className="text-mainL dark:text-mainD"
